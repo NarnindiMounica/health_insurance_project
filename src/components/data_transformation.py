@@ -67,8 +67,8 @@ class DataTransformation:
             train_set_arr = preprocessor_obj.fit_transform(train_set)
             test_set_arr = preprocessor_obj.transform(test_set)
 
-            train_array = np.c_[train_set_arr, train_target]
-            test_array = np.c_[test_set_arr, test_target]
+            train_array = np.c_[train_set_arr,np.asarray( train_target)]
+            test_array = np.c_[test_set_arr, np.asarray(test_target)]
 
             logging.info('Saved preprocessing objects')
 
